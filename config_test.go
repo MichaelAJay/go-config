@@ -40,8 +40,8 @@ func TestConfigManager_BasicOperations(t *testing.T) {
 	if err != nil {
 		t.Errorf("Set failed: %v", err)
 	}
-	if val, ok := cfg.GetString("string_key"); !ok || val != "wrong_value" {
-		t.Errorf("GetString failed: got %v, %v, want %v, %v", val, ok, "wrong_value", true)
+	if val, ok := cfg.GetString("string_key"); !ok || val != "test_value" {
+		t.Errorf("GetString failed: got %v, %v, want %v, %v", val, ok, "test_value", true)
 	}
 
 	// Test setting and getting int
