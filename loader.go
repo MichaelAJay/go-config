@@ -47,8 +47,8 @@ type EnvSource struct {
 }
 
 // Load implements the Source interface
-func (s *EnvSource) Load() (map[string]interface{}, error) {
-	values := make(map[string]interface{})
+func (s *EnvSource) Load() (map[string]any, error) {
+	values := make(map[string]any)
 	prefix := strings.ToUpper(s.Prefix)
 
 	for _, env := range os.Environ() {

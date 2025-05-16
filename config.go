@@ -131,7 +131,7 @@ func (c *ConfigManager) GetStringSlice(key string) ([]string, bool) {
 	switch v := value.(type) {
 	case []string:
 		return v, true
-	case []interface{}:
+	case []any:
 		result := make([]string, len(v))
 		for i, item := range v {
 			if str, ok := item.(string); ok {
@@ -147,7 +147,7 @@ func (c *ConfigManager) GetStringSlice(key string) ([]string, bool) {
 }
 
 // Set sets a configuration value
-func (c *ConfigManager) Set(key string, value interface{}) error {
+func (c *ConfigManager) Set(key string, value any) error {
 	c.mu.Lock()
 	defer c.mu.Unlock()
 

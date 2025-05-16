@@ -47,7 +47,7 @@ func main() {
 
     // Set default values
     defaults := &config.DefaultSource{
-        Values: map[string]interface{}{
+        Values: map[string]any{
             "port":     8080,
             "host":     "localhost",
             "debug":    false,
